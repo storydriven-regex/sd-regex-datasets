@@ -1,3 +1,16 @@
+names/ssa-popular-names.zip:
+  landing_page: https://www.ssa.gov/oact/babynames/limits.html
+  url: https://www.ssa.gov/oact/babynames/names.zip
+
+names/ssa-popular-names.csv:
+  make: |
+    echo 'year,name,sex,count' > names/ssa-popular-names.csv && \
+    rg --no-line-number --with-filename --no-heading  \
+      '\w' names/ssa-popular-names/*.txt \
+     | rg '(\d{4}).txt:(.+)' -or '$1,$2' \
+     >> names/ssa-popular-names.csv
+
+
 ppp/original-ppp-loans-150k-plus.zip:
   title: Paycheck Protection Program loan data by state for loans of $150,000 and above.
   collected_at: 2020-07-10
