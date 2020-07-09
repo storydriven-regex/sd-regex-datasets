@@ -17,3 +17,14 @@ ppp/ppp-loans-150k-plus-ohio.csv:
 ppp/ppp-loans-150k-plus.zip:
   make: |
     zip ppp/ppp-loans-150k-plus.zip ppp/ppp-loans-150k-plus.csv
+
+
+fec/senate-campaign-disbursements-2018.csv:
+  landing_page: https://www.fec.gov/data/disbursements/?spender_committee_type=S&data_type=processed&two_year_transaction_period=2018
+  notes: |
+    original name of file as downloaded is: schedule_b-2020-07-09T13_27_57.csv
+
+
+fec/senate-campaign-disbursements-2018.zip:
+  make: |
+    zip fec/senate-campaign-disbursements-2018.zip fec/senate-campaign-disbursements-2018.csv

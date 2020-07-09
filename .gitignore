@@ -2,7 +2,7 @@
 
 # specific big files
 ppp/ppp-loans-150k-plus.csv
-
+fec/senate-campaign-disbursements-2018.csv
 # names for data stash folders that shouldn't be committed
 _drafts/
 junk/
