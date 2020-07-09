@@ -28,3 +28,15 @@ fec/senate-campaign-disbursements-2018.csv:
 fec/senate-campaign-disbursements-2018.zip:
   make: |
     zip fec/senate-campaign-disbursements-2018.zip fec/senate-campaign-disbursements-2018.csv
+
+
+salaries/texas-state-agency-salaries.csv:
+  url: https://s3.amazonaws.com/raw.texastribune.org/state_of_texas/salaries/03_non_duplicated_employees/2020-04-03.csv
+  landing_page: https://salaries.texastribune.org/
+  updated_at: 2020-04-03
+  collected_at: 2020-07-10
+  notes: |
+    https://salaries.texastribune.org/faq/
+
+    > The Tribune only publishes salaries for state government workers. As of May 2020, we no longer publish salaries for university, public hospital or local government employees. By focusing our salaries explorer on one data source — the state comptroller’s database of state government workers — we’re better able to ensure our data is accurate and up to date.
+
