@@ -1,0 +1,15 @@
+ppp/ppp-loans-150k-plus.zip:
+  title: Paycheck Protection Program loan data by state for loans of $150,000 and above.
+  collected_at: 2020-07-10
+  landing_page: https://home.treasury.gov/policy-issues/cares-act/assistance-for-small-businesses/sba-paycheck-protection-program-loan-level-data
+  url: https://bit.ly/ppp2020-150kplus
+
+ppp/ppp-loans-150k-plus.csv:
+  unzip:
+    srcfile: ppp/ppp-loans-150k-plus.zip
+    listname: '150k plus/PPP Data 150k plus.csv'
+
+ppp/ppp-loans-150k-plus-ohio.csv:
+  make: |
+    xsv search 'OH' --select State ppp/ppp-loans-150k-plus.csv > ppp/ppp-loans-150k-plus-ohio.csv
+
