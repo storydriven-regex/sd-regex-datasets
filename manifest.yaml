@@ -1,3 +1,20 @@
+d4d-pharma/gsk-hcp-disclosure-2010.pdf:
+  url: https://propublica.s3.amazonaws.com/assets/docdollars/payment_reports-for-partners/GSK-2010-Q1_Q4.pdf
+
+d4d-pharma/gsk-hcp-disclosure-2010.txt:
+  make: |
+    pdftotext -layout d4d-pharma/gsk-hcp-disclosure-2010.pdf \
+      d4d-pharma/gsk-hcp-disclosure-2010.txt
+
+d4d-pharma/astrazeneca-speakers-2010.pdf:
+  url: https://propublica.s3.amazonaws.com/assets/docdollars/payment_reports-for-partners/AstraZeneca-2010-Q1_Q4.pdf
+
+d4d-pharma/astrazeneca-speakers-2010.txt:
+  make: |
+    pdftotext -layout d4d-pharma/astrazeneca-speakers-2010.pdf \
+      d4d-pharma/astrazeneca-speakers-2010.txt
+
+
 names/ssa-popular-names.zip:
   landing_page: https://www.ssa.gov/oact/babynames/limits.html
   url: https://www.ssa.gov/oact/babynames/names.zip
@@ -53,3 +70,22 @@ salaries/texas-state-agency-salaries.csv:
 
     > The Tribune only publishes salaries for state government workers. As of May 2020, we no longer publish salaries for university, public hospital or local government employees. By focusing our salaries explorer on one data source — the state comptroller’s database of state government workers — we’re better able to ensure our data is accurate and up to date.
 
+
+
+
+food-inspection/nyc-restaurant-inspections.csv:
+  url: https://data.cityofnewyork.us/api/views/43nn-pn8j/rows.csv?accessType=DOWNLOAD
+  landing_page: https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j
+
+
+food-inspection/nyc-restaurant-inspections-2017-to-2018.csv:
+  make: |
+    cat food-inspection/nyc-restaurant-inspections.csv \
+      | xsv search '201[78]' -s 'INSPECTION DATE' \
+      > food-inspection/nyc-restaurant-inspections-2017-to-2018.csv
+  notes: |
+    How many pho shops not under Asian/Viet:
+    cat data \
+      | xsv search -i '\bpho\b' -s DBA \
+      | xsv search 'asian|viet' -iv -s 'CUISINE DESCRIPTION' \
+    Not sure how many ideas are possible with normalized data...?
