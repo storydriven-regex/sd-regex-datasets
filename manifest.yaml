@@ -89,3 +89,41 @@ food-inspection/nyc-restaurant-inspections-2017-to-2018.csv:
       | xsv search -i '\bpho\b' -s DBA \
       | xsv search 'asian|viet' -iv -s 'CUISINE DESCRIPTION' \
     Not sure how many ideas are possible with normalized data...?
+
+
+"""
+Issue with OSHA fatality data is that columns change every year. Might
+just do 2015-16
+"""
+
+
+osha/fatalities-fy2010.csv:
+  landing_page: https://www.osha.gov/fatalities/reports/archive
+  url: https://www.osha.gov/sites/default/files/FatalitiesFY10.csv
+
+osha/fatalities-fy2011.csv:
+  landing_page: https://www.osha.gov/fatalities/reports/archive
+  url: https://www.osha.gov/sites/default/files/FatalitiesFY11.csv
+osha/fatalities-fy2012.csv:
+  landing_page: https://www.osha.gov/fatalities/reports/archive
+  url: https://www.osha.gov/sites/default/files/FatalitiesFY12.csv
+
+
+osha/fatalities-fy2013.csv:
+  landing_page: https://www.osha.gov/fatalities/reports/archive
+  url: https://www.osha.gov/sites/default/files/fy13_federal-state_summaries.csv
+
+osha/fatalities-fy2014.csv:
+  landing_page: https://www.osha.gov/fatalities/reports/archive
+  url: https://www.osha.gov/sites/default/files/fy14_federal-state_summaries.csv
+
+osha/fatalities-fy2015.csv:
+  landing_page: https://www.osha.gov/fatalities/reports/archive
+  url: https://www.osha.gov/sites/default/files/fy15_federal-state_summaries.csv
+
+
+osha/fatalities-fy2016.csv:
+  landing_page: https://www.osha.gov/fatalities/reports/archive
+  url: https://www.osha.gov/sites/default/files/fy16_federal-state_summaries.csv
+
+
